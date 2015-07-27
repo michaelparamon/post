@@ -1,6 +1,7 @@
 # post
 
 Third party used (install this on client folder)
+
 **Tiny MCE**
 follow this link for installation 
 
