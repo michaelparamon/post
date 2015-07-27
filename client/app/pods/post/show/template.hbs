@@ -1,0 +1,21 @@
+{{outlet}}
+{{#link-to 'post'}}<h3>Post</h3>{{/link-to}}
+<div class='container'>
+	<div class='container'>
+		{{model.postTitle}}
+		<hr>
+		{{{model.postContent}}}
+	</div>
+	<br>
+	<h4>{{model.comments.length}} Comment(s)</h4>
+	<div class='container'>
+		{{#each comment in model.comments}}
+			{{comment.commentContent}}
+			<br>
+		{{/each}}
+	</div>
+	<br>
+	{{textarea class='form-control' value=commentCon}}
+	<br>
+	<button class='btn btn-primary' {{action 'saveComment' commentCon}}>Input New Comment</button>
+</div>

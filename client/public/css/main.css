@@ -1,0 +1,23 @@
+body,input{
+	margin:0px;
+	padding:20px
+}
+
+.glyphicon{
+	font-size: 1.5em;
+}
+
+.glyphicon-edit{
+	color: blue;
+}
+
+.glyphicon-remove{
+	color: red;
+}
+.mce-path {/* CSS */
+    display: none !important;
+}
+
+.mce-statusbar {
+	border-width: 0 !important;
+}

@@ -1,0 +1,7 @@
+{{outlet}}
+<h3>List of Post</h3>
+<br>
+{{post-show postModel=model triggerDelete='deletePost'}}
+
+<br>
+{{#link-to 'post.new'}} <button class='btn btn-primary'>Add New Post</button> {{/link-to}}

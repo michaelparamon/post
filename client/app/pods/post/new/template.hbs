@@ -1,0 +1,19 @@
+{{outlet}}
+Title
+{{input type='text' class='form-control' value=model.postTitle}}
+Slug
+{{input value=model.slug class="form-control"}}
+Parent
+<br>
+{{#x-select value=model.parent}}
+  {{#x-option}}None{{/x-option}}
+  {{#each post in model}}
+  	{{#x-option value=post.slug}} {{post.slug}} {{/x-option}}
+  {{/each}}
+{{/x-select}}     
+<br>
+Content
+{{text-editor value=model.postContent}}
+{{!-- {{input type='text' class='form-control' value=model.postContent}} --}}
+
+<button class='btn btn-primary' {{action 'newRecord' model}}>Submit</button>

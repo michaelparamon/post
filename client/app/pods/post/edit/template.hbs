@@ -1,0 +1,10 @@
+{{outlet}}
+Title
+{{input type='text' class='form-control' value=model.postTitle}}
+Slug
+{{input value=model.slug class="form-control"}}
+Content
+{{text-editor value=model.postContent}}
+{{!-- {{{input type='text' class='form-control' value=model.postContent}} --}}
+
+<button class='btn btn-primary' {{action 'updateRecord' model}}>Submit</button>

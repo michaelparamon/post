@@ -1,0 +1,32 @@
+{{yield}}
+<div class='container'>
+	<div class='table-responsive'>
+		<table class='table table-hover'>
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Title</td>
+					<td>Slug</td>
+					<td>Content</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each postModel as |post|}}
+					{{#link-to 'post.show' post tagName='tr'}}
+						<td>{{post.id}}</td>
+						<td>{{post.postTitle}}</td>
+						<td>{{post.slug}}</td>
+						<td>{{{post.postContent}}}</td>
+						<td>
+							{{#link-to 'post.edit' post}}<i class='glyphicon glyphicon-edit'></i>{{/link-to}}
+							&nbsp;&nbsp;&nbsp;
+							<i class='glyphicon glyphicon-remove' {{action 'postDelete' post}}></i>
+							{{!-- <button class='btn' {{action 'postDelete' post.id bubbles=false}}><i class='glyphicon glyphicon-remove'></i></button>> --}}
+						</td>
+					{{/link-to}}
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</div>
