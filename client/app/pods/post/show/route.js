@@ -7,12 +7,12 @@ export default Ember.Route.extend({
 		// this.set('paramCon',this.store.find('post',  param.id);
 		/*return this.store.find('post', param.slug);*/
 		//return this.store.find('post', {slug:param.slug});
-		return this.store.findQuery('post', {slug:param.slug});
+		return this.store.findQuery('post', {slug:param.slug}).then(model => model.content[0]);
 	},
 	setupController: function(controller, model) {
     controller.set('model', model);
   },
-	/*serialize: function(model) {
+	serialize: function(model) {
 		var par;
 			if(model.get('parent'))
 			{
@@ -25,9 +25,9 @@ export default Ember.Route.extend({
 	    console.log(par);
       return { 
       	slug: model.get('slug'),
-      	// parent: par 
+      	parent: par 
       };
-    },*/
+    },
 	actions: {
 		saveComment: function(param){
 			var parcon = this.get('paramCon');
