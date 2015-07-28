@@ -1,7 +1,18 @@
 /* jshint node: true */
 
+var devHost = 'http://localhost:4200';
+
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'style-src': "'self' 'unsafe-inline'",
+      'script-src': "'self' 'unsafe-inline' https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js",
+      'connect-src': "'self' " + devHost,
+      'img-src':     "'self' data: " + devHost,
+      'font-src':    "'self'",
+      'frame-src':   "'none'"
+    },
     modulePrefix: 'client',
     podModulePrefix: 'client/pods',
     environment: environment,
