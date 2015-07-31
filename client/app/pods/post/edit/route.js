@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model: function(param){
-		return this.store.find('post',param.slug);
+		return this.store.findQuery('post', {slug:param.slug}).then(model => model.content[0]);
 	},
 	serialize: function(model) {
       return { 

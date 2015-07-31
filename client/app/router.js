@@ -9,7 +9,7 @@ Router.map(function() {
   this.route('post', function() {
     this.route('new');
     this.route('edit', {path: ':slug/edit'});
-    this.route('show', {path: ':parent/*slug'}, function() {
+    this.route('show', {path: '*slug'}, function() {
       this.route('asd');
     });
   });

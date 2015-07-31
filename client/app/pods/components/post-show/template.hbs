@@ -21,7 +21,7 @@
 						<td>
 							{{#link-to 'post.edit' post}}<i class='glyphicon glyphicon-edit'></i>{{/link-to}}
 							&nbsp;&nbsp;&nbsp;
-							<i class='glyphicon glyphicon-remove' {{action 'postDelete' post}}></i>
+							<i class='glyphicon glyphicon-remove' {{action 'postDelete' post.id}}></i>
 							{{!-- <button class='btn' {{action 'postDelete' post.id bubbles=false}}><i class='glyphicon glyphicon-remove'></i></button>> --}}
 						</td>
 					{{/link-to}}
