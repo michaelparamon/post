@@ -43,6 +43,11 @@ export default Ember.Route.extend({
 
 			var self = this; //supaya dia tau this nya yg disini
 
+			this.set('model.postTitle', '');
+			this.set('model.slug', '');
+			this.set('model.parent', '');
+			this.set('model.postContent', '');
+
 			post.save().then(function(){
 				alert('success');
 				self.transitionTo('post'); //kalo langsung pake this, dia ga tau this nunjuk siapa
